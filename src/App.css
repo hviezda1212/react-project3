@@ -20,13 +20,19 @@
 }
 
 .menu-list li {
-  padding: 10px;
+  margin: 10px 20px 5px 20px;
   cursor: pointer;
+  font-weight: 600;
+}
+
+.menu-list li:hover {
+  border-bottom: 1px solid black;
 }
 
 .menu-area {
   display: flex;
   justify-content: center;
+  margin : 20px 10px;
 }
 
 .search-area {
@@ -52,6 +58,8 @@
   background-clip: border-box;
   margin-bottom : 15px;
   cursor: pointer;
+  transform: scale(1.0);
+  transition: transform .2s;
 }
 
 .card-area:hover {
