@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faHeart } from "@fortawesome/free-regular-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ authenticate, setAuthenticate }) => {
   const menuList = [
     "Women",
     "Men",
@@ -33,11 +33,27 @@ const Navbar = () => {
     }
   };
 
+  let [width, setWidth] = useState(0);
+
   return (
     <div>
+      <div className="side-menu" style={{ width: width }}>
+        <button className="closebtn" onClick={() => setWidth(0)}>
+          &times;
+        </button>
+        <div className="side-menu-list" id="menu-list">
+          {menuList.map((menu, index) => (
+            <button key={index}>{menu}</button>
+          ))}
+        </div>
+      </div>
+
       <div className="top-area"></div>
       <div className="nav-section">
         <div className="left-button-area">
+          <div className="burger-menu hide">
+            <FontAwesomeIcon icon={faBars} onClick={() => setWidth(250)} />
+          </div>
           <div>고객 서비스</div>
           <div>뉴스레터</div>
           <div>매장 찾기</div>
@@ -48,10 +64,20 @@ const Navbar = () => {
           src="https://i.namu.wiki/i/25UU_-oz7gEmFHCa3f3du7joUUaFzkbyiAC6iR0Ee-JvdYRHfvB8zKGB2GsOH9sREEY4_9GMNGiEw-gvjchx_UxTBpKl-XIRyG63z9-rk2raoBgN4LJou5LdXhIXrx9QQtV7MoA6nCDqJhtyW7K2Nw.svg"
         />
         <div className="right-button-area">
-          <div className="login-button" onClick={goToLogin}>
-            <FontAwesomeIcon icon={faUser} />
-            <div>로그인</div>
-          </div>
+          {authenticate ? (
+            <div
+              className="login-button"
+              onClick={() => setAuthenticate(false)}
+            >
+              <FontAwesomeIcon icon={faUser} />
+              <span style={{ cursor: "pointer" }}>로그아웃</span>
+            </div>
+          ) : (
+            <div className="login-button" onClick={() => navigate("/login")}>
+              <FontAwesomeIcon icon={faUser} />
+              <span style={{ cursor: "pointer" }}>로그인</span>
+            </div>
+          )}
           <div className="like-button">
             <FontAwesomeIcon icon={faHeart} />
             <div>즐겨찾기</div>
@@ -59,7 +85,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="menu-area">
-        <ul className="menu-list">
+        <ul className="menu-list hide-rev">
           {menuList.map((menu) => (
             <li>{menu}</li>
           ))}

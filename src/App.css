@@ -132,6 +132,10 @@
   visibility: hidden;
 }
 
+.hide-rev {
+  visibility: visible;
+}
+
 .footer-area {
   background-color: #e4e4e4;
   margin-top: 50px;
@@ -140,6 +144,9 @@
 @media screen and (max-width: 63rem) {
   .hide {
     visibility: visible;
+  }
+  .hide-rev {
+    visibility: hidden;
   }
   .menu {
     display: none;
