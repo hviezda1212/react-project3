@@ -6,6 +6,7 @@ import ProductAll from "./page/ProductAll";
 import Login from "./page/Login";
 import ProductDetail from "./page/ProductDetail";
 import Navbar from "./component/Navbar"
+import Footer from "./component/Footer"
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<Login setAuthenticate={setAuthenticate}/>} />
         <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

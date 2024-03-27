@@ -76,3 +76,8 @@
   transform: scale(1.05);
   transition: transform .2s; 
 }
+
+.footer-area {
+  background-color:#E4E4E4;
+  margin-top:50px;
+}
