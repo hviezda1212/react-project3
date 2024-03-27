@@ -22,3 +22,12 @@
   display: flex;
   justify-content: center;
 }
+
+.search-area {
+    border-bottom: 1px solid black;
+    align-items: center;
+}
+
+.search-area  input {
+    border:none;
+}
