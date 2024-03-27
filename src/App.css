@@ -1,21 +1,43 @@
+.nav-section {
+  display: flex;
+  justify-content: space-between;
+  margin:50px 50px 10px 50px;
+}
+
+.nav-section img {
+  cursor: pointer;
+}
+
+.left-button-area{
+  display: flex;
+}
+
+.left-button-area div{
+  margin-right:15px;
+  cursor: pointer;
+}
+
+.right-button-area{
+  display: flex;
+}
+
 .login-button {
   display: flex;
-  justify-content: flex-end;
-  margin: 20px;
   cursor: pointer;
+  margin-right:20px;
 }
 
 .login-button div {
   margin-left : 5px;
 }
 
-.nav-section {
+.like-button {
   display: flex;
-  justify-content: center;
+  cursor: pointer;
 }
 
-.nav-section img {
-  cursor: pointer;
+.login-button div {
+  margin-left : 5px;
 }
 
 .menu-list {
@@ -42,7 +64,7 @@
 .search-area {
   border-bottom: 1px solid black;
   position: absolute;
-  right: 20px;
+  right: 50px;
   padding: 5px;
 }
 .search-area input {
