@@ -37,3 +37,18 @@
 .search-area input:focus {
   outline: none;
 }
+
+.card-area {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  margin-bottom : 15px;
+  cursor: pointer;
+}
+
+.card-area:hover {
+  transform: scale(1.05);
+}

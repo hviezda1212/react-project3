@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProductCard = ({item}) => {
   return (
-    <div>
+    <div className = "card-area">
       <img src={item?.img}/>
       <div>{item?.choice==true?"Conscious choice":""}</div>
       <div>{item?.title}</div>
