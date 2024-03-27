@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const menuList = [
@@ -14,10 +15,17 @@ const Navbar = () => {
     "Sale",
     "지속가능성",
   ];
+
+  const navigate = useNavigate();
+
+  const goToLogin = () => {
+    navigate("/login");
+  };
+
   return (
     <div>
       <div>
-        <div className="login-button">
+        <div className="login-button" onClick={goToLogin}>
           <FontAwesomeIcon icon={faUser} />
           <div>로그인</div>
         </div>
@@ -28,15 +36,15 @@ const Navbar = () => {
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/1200px-H%26M-Logo.svg.png"
         />
       </div>
-      <div className = "menu-area">
+      <div className="menu-area">
         <ul className="menu-list">
           {menuList.map((menu) => (
             <li>{menu}</li>
           ))}
         </ul>
-        <div className = "search-area">
-            <FontAwesomeIcon icon={faSearch}/>
-            <input type="text"/>
+        <div className="search-area">
+          <FontAwesomeIcon icon={faSearch} />
+          <input type="text" />
         </div>
       </div>
     </div>
