@@ -5,6 +5,10 @@
   cursor: pointer;
 }
 
+.login-button div {
+  margin-left : 5px;
+}
+
 .nav-section {
   display: flex;
   justify-content: center;
@@ -47,6 +51,12 @@
 }
 .search-area input:focus {
   outline: none;
+}
+
+.ad-area {
+  display: flex;
+  justify-content: center;
+  margin-bottom : 30px;
 }
 
 .card-area {

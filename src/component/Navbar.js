@@ -6,12 +6,12 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const menuList = [
-    "여성",
-    "Divided",
-    "남성",
-    "신생아/유아",
-    "아동",
+    "Women",
+    "Men",
+    "Baby",
+    "Kids",
     "H&M Home",
+    "Sport",
     "Sale",
     "지속가능성",
   ];
@@ -26,11 +26,18 @@ const Navbar = () => {
     navigate("/");
   };
 
+  const search=(event)=> {
+    if(event.key==="Enter") {
+     let keyword = event.target.value;
+     navigate(`/?q=${keyword}`);
+    }
+  }
+
   return (
     <div>
       <div>
         <div className="login-button" onClick={goToLogin}>
-          <FontAwesomeIcon icon={faUser} />
+          <FontAwesomeIcon icon={faUser}/>
           <div>로그인</div>
         </div>
       </div>
@@ -48,7 +55,7 @@ const Navbar = () => {
         </ul>
         <div className="search-area">
           <FontAwesomeIcon icon={faSearch} />
-          <input type="text" />
+          <input type="text" onKeyPress={(event)=>search(event)}/>
         </div>
       </div>
     </div>
