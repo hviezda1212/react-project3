@@ -10,6 +10,7 @@
 
 .left-button-area{
   display: flex;
+  width:300px;
 }
 
 .left-button-area div{
@@ -19,6 +20,8 @@
 
 .right-button-area{
   display: flex;
+  width:300px;
+  justify-content: flex-end;
 }
 
 .login-button {
