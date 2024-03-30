@@ -23,9 +23,6 @@ const ProductAll = () => {
   return (
     <div>
       <Container>
-        <div className="ad-area">
-          회원 혜택:3만원 이상 무료배송 & 첫구매 10% 할인
-        </div>
         <Row>
           {productList.map((menu) => (
             <Col lg={3}>
