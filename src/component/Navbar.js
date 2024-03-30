@@ -61,7 +61,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
         <img
           onClick={goToMain}
           width={100}
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/800px-H%26M-Logo.svg.png"
+          src={`${process.env.PUBLIC_URL}/H&M-Logo.png`}
         />
         <div className="right-button-area">
           {authenticate ? (
