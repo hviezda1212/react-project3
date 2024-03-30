@@ -11,8 +11,9 @@ import Footer from "./component/Footer";
 function App() {
   const [authenticate, setAuthenticate] = useState(false);
   return (
-    <div>
+    <div className='homepage_wrap'>
       <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />
+      <div className="margin-top">
       <Routes>
         <Route path="/" element={<ProductAll />} />
         <Route
@@ -24,6 +25,7 @@ function App() {
           element={<PrivateRoute authenticate={authenticate} />}
         />
       </Routes>
+      </div>
       <Footer />
     </div>
   );

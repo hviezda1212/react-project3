@@ -10,6 +10,7 @@ const Login = ({ setAuthenticate }) => {
     navigate("/");
   };
   return (
+    <div>
     <Container>
       <Form onSubmit={(event) => loginUser(event)}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -32,6 +33,7 @@ const Login = ({ setAuthenticate }) => {
         </Button>
       </Form>
     </Container>
+    </div>
   );
 };
 

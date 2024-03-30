@@ -6,6 +6,12 @@
 .nav-section img {
   cursor: pointer;
 }
+.homepage_wrap {
+  height: 100vh;
+}
+.margin-top{
+  margin-top:80px;
+}
 
 .left-button-area {
   display: flex;
