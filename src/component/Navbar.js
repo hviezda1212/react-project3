@@ -50,7 +50,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
 
       <div className="top-area"></div>
       <div className="nav-section">
-        <div className="left-button-area">
+        <div className="left-button-area hide-rev">
           <div className="burger-menu hide">
             <FontAwesomeIcon icon={faBars} onClick={() => setWidth(250)} />
           </div>
@@ -61,7 +61,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
         <img
           onClick={goToMain}
           width={100}
-          src="https://i.namu.wiki/i/25UU_-oz7gEmFHCa3f3du7joUUaFzkbyiAC6iR0Ee-JvdYRHfvB8zKGB2GsOH9sREEY4_9GMNGiEw-gvjchx_UxTBpKl-XIRyG63z9-rk2raoBgN4LJou5LdXhIXrx9QQtV7MoA6nCDqJhtyW7K2Nw.svg"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/800px-H%26M-Logo.svg.png"
         />
         <div className="right-button-area">
           {authenticate ? (
@@ -70,17 +70,17 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
               onClick={() => setAuthenticate(false)}
             >
               <FontAwesomeIcon icon={faUser} />
-              <span style={{ cursor: "pointer" }}>로그아웃</span>
+              <span className="hide-rev" style={{ cursor: "pointer" }}>로그아웃</span>
             </div>
           ) : (
             <div className="login-button" onClick={() => navigate("/login")}>
               <FontAwesomeIcon icon={faUser} />
-              <span style={{ cursor: "pointer" }}>로그인</span>
+              <span className="hide-rev" style={{ cursor: "pointer" }}>로그인</span>
             </div>
           )}
           <div className="like-button">
             <FontAwesomeIcon icon={faHeart} />
-            <div>즐겨찾기</div>
+            <div className="hide-rev">즐겨찾기</div>
           </div>
         </div>
       </div>
