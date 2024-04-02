@@ -20,13 +20,23 @@ export const fetchProducts = createAsyncThunk(
   }
 );
 
+export const fetchDetailProducts = createAsyncThunk(
+  'product/fetchDetail',
+  async (id, thunkApi) => {
+    try {
+      let url = `https://my-json-server.typicode.com/hviezda1212/react-project3/products/${id}`;
+      let response = await fetch(url);
+      return await response.json();
+    } catch (error) {
+      thunkApi.rejectWithValue(error.message);
+    }
+  }
+)
+
 const productSlice = createSlice({
   name: "product",
   initialState,
   reducers: {
-    getSingleProduct(state, action) {
-      state.selectedItem = action.payload.data;
-    },
   },
   extraReducers: (builder) => {
     builder
@@ -38,6 +48,18 @@ const productSlice = createSlice({
         state.productList = action.payload;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+
+      .addCase(fetchDetailProducts.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchDetailProducts.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.selectedItem = action.payload;
+      })
+      .addCase(fetchDetailProducts.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
       });
