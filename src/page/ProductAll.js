@@ -9,7 +9,7 @@ const ProductAll = () => {
   const productList = useSelector((state)=>state.product.productList);
   const [query, setQuery] = useSearchParams();
   const dispatch = useDispatch();
-  const getProducts = async () => {
+  const getProducts = () => {
     let searchQuery = query.get("q") || "";
     dispatch(productAction.getProducts(searchQuery));
   };

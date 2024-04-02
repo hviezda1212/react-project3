@@ -11,7 +11,7 @@ const ProductDetail = () => {
   const [error, setError] = useState("");
   const { id } = useParams();
 
-  const getProductDetail = async () => {
+  const getProductDetail = () => {
     dispatch(productAction.getProductDetail(id));
   };
   useEffect(() => {

@@ -9,10 +9,9 @@ import Navbar from "./component/Navbar";
 import Footer from "./component/Footer";
 
 function App() {
-  const [authenticate, setAuthenticate] = useState(false);
   return (
     <div className="homepage_wrap">
-      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />
+      <Navbar />
       <div className="margin-top">
         <Routes>
           <Route path="/" element={<ProductAll />} />
